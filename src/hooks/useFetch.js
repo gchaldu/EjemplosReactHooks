@@ -10,18 +10,26 @@ export const useFetch = (url) => {
 
     const getFetch = async () => {
 
-        const res = await fetch(url);
-        if (!res.ok) {
-            const e = new Error('Error en la solicitur');
-            setState({...state, error:e});
-            throw e;
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            setState(
+                {
+                    ...state,
+                    data,
+                    isLoading: false
+                });
+        }catch(error)
+        {
+            setState(
+                {
+                    data:null,
+                    isLoading:false,
+                    error: 'Error en la solicitud a la API'
+                }
+            )
         }
-        const data = await res.json();
-        setState(
-            {
-                ...state, 
-                data:data, 
-                isLoading:false});
+        
     }
     useEffect(() => {
         getFetch();

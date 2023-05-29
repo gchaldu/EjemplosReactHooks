@@ -17,9 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <CounterWithCustomHook /> */}
     {/* <SimpleForm /> */}
     {/* <FormWithCustomHook /> */}
-    {/* <MultipleCustomHook /> */}
+    <MultipleCustomHook />
     {/* <FocusScreem/> */}
     {/* <Layout /> */}
-    <Memorize />
+    {/* <Memorize /> */}
   </React.StrictMode>,
 )
