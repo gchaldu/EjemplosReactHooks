@@ -24,3 +24,4 @@ export const CounterHook = (initialValue=10) => {
         reset
     }
 }
+export default CounterHook
